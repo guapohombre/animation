@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.mask-container {
+  position: relative;
+  width: 1200px;
+  height: auto;
+}
+
+.color-image {
+  background-image: url("img/color-image1200x801.jpg");
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  -webkit-mask-image: url("img/image-mask.png");
+  -webkit-mask-size: cover;
+  -webkit-mask-position: 0% 0%;
+  mask-image: url("img/image-mask.png");
+  mask-size: cover;
+  mask-position: 0% 0%;
+  animation: addColor 500ms 1.5s steps(24) forwards;
+}
+
+@keyframes addColor {
+  0% {
+    -webkit-mask-position: 0% 0%;
+    mask-position: 0% 0%;
+  }
+
+  100% {
+    -webkit-mask-position: 100% 0%;
+    mask-position: 0% 0%;
+  }
+}
